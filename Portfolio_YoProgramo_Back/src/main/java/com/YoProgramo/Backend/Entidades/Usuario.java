@@ -3,6 +3,7 @@ package com.YoProgramo.Backend.Entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -16,6 +17,9 @@ public class Usuario {
 
 	private String nombreDeUsuario;
 	private String clave;
+
+	@OneToOne
+	private Persona persona;
 	
 	public Usuario() {
 	
@@ -57,4 +61,14 @@ public class Usuario {
 	public void setClave(String clave) {
 		this.clave = clave;
 	}
+
+	@Override
+	public String toString() {
+		return "{" +
+			" id='" + getId() + "'" +
+			", nombreDeUsuario='" + getNombreDeUsuario() + "'" +
+			", clave='" + getClave() + "'" +
+			"}";
+	}
+	
 }

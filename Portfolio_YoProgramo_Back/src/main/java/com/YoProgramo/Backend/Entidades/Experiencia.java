@@ -86,4 +86,15 @@ public class Experiencia {
         return persona;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", title='" + getTitle() + "'" +
+            ", description='" + getDescription() + "'" +
+            ", foto='" + getFoto() + "'" +
+            ", persona='" + getPersona() + "'" +
+            "}";
+    }
+
 }

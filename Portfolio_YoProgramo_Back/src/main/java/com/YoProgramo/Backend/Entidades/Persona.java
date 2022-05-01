@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -18,15 +20,28 @@ public class Persona {
     private String descripcion;
     private String foto;
 
+    @OneToOne
+    private Usuario usuario;
+
+    
+    @OneToMany
     private List<Estudio> estudios;
+    
+    @OneToMany
     private List<Experiencia> experienciaLaboral;
+    
+    @OneToMany
+    private List<Skill> habilidades; 
+    
+    @OneToMany
+    private List<Proyecto> proyectos; 
 
 
     public Persona() {
     }
     
 
-    public Persona(String id, String nombre, String cargo, String descripcion, String foto, List<Estudio> estudios, List<Experiencia> experienciaLaboral) {
+    public Persona(String id, String nombre, String cargo, String descripcion, String foto, List<Estudio> estudios, List<Experiencia> experienciaLaboral, List<Skill> habilidades,List<Proyecto> proyectos) {
         this.id = id;
         this.nombre = nombre;
         this.cargo = cargo;
@@ -34,109 +49,111 @@ public class Persona {
         this.foto = foto;
         this.estudios = estudios;
         this.experienciaLaboral = experienciaLaboral;
+        this.habilidades = habilidades;
+        this.proyectos = proyectos;
     }
+
     
-    public Persona(String nombre, String cargo, String descripcion, String foto, List<Estudio> estudios, List<Experiencia> experienciaLaboral) {
+    public Persona(String nombre, String cargo, String descripcion, String foto, List<Estudio> estudios, List<Experiencia> experienciaLaboral,List<Proyecto> proyectos) {
         this.nombre = nombre;
         this.cargo = cargo;
         this.descripcion = descripcion;
         this.foto = foto;
         this.estudios = estudios;
         this.experienciaLaboral = experienciaLaboral;
+        this.proyectos = proyectos;
     }
 
-        
 
-    /**
-     * @return String return the id
-     */
     public String getId() {
-        return id;
+        return this.id;
     }
 
-
-    /**
-     * @return String return the nombre
-     */
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
-    /**
-     * @param nombre the nombre to set
-     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    /**
-     * @return String return the cargo
-     */
     public String getCargo() {
-        return cargo;
+        return this.cargo;
     }
 
-    /**
-     * @param cargo the cargo to set
-     */
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
 
-    /**
-     * @return String return the descripcion
-     */
     public String getDescripcion() {
-        return descripcion;
+        return this.descripcion;
     }
 
-    /**
-     * @param descripcion the descripcion to set
-     */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    /**
-     * @return String return the foto
-     */
     public String getFoto() {
-        return foto;
+        return this.foto;
     }
 
-    /**
-     * @param foto the foto to set
-     */
     public void setFoto(String foto) {
         this.foto = foto;
     }
 
-    /**
-     * @return List<Estudio> return the estudios
-     */
-    public List<Estudio> getEstudios() {
-        return estudios;
+    public Usuario getUsuario() {
+        return this.usuario;
     }
 
-    /**
-     * @param estudios the estudios to set
-     */
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public List<Estudio> getEstudios() {
+        return this.estudios;
+    }
+
     public void setEstudios(List<Estudio> estudios) {
         this.estudios = estudios;
     }
 
-    /**
-     * @return List<Experiencia> return the experienciaLaboral
-     */
     public List<Experiencia> getExperienciaLaboral() {
-        return experienciaLaboral;
+        return this.experienciaLaboral;
     }
 
-    /**
-     * @param experienciaLaboral the experienciaLaboral to set
-     */
     public void setExperienciaLaboral(List<Experiencia> experienciaLaboral) {
         this.experienciaLaboral = experienciaLaboral;
+    }
+
+    public List<Skill> getHabilidades() {
+        return this.habilidades;
+    }
+
+    public void setHabilidades(List<Skill> habilidades) {
+        this.habilidades = habilidades;
+    }
+
+    public List<Proyecto> getProyectos() {
+        return this.proyectos;
+    }
+
+    public void setProyectos(List<Proyecto> proyectos) {
+        this.proyectos = proyectos;
+    }
+  
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", nombre='" + getNombre() + "'" +
+            ", cargo='" + getCargo() + "'" +
+            ", descripcion='" + getDescripcion() + "'" +
+            ", foto='" + getFoto() + "'" +
+            ", estudios='" + getEstudios() + "'" +
+            ", experienciaLaboral='" + getExperienciaLaboral() + "'" +
+            ", habilidades='" + getHabilidades() + "'" +
+            "}";
     }
 
 }
