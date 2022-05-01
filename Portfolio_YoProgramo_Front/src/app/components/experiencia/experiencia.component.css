@@ -1,0 +1,20 @@
+.experiencia_encabezado {
+    text-align: center;
+}
+
+.trabajo {
+    padding: 0 3rem;
+}
+
+@media (min-width: 300px) {
+    .col-xs-8{
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+
+    .col-xs-4{
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+    
+}
