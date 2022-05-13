@@ -1,0 +1,9 @@
+.container-skills{
+    width: 100%;
+}
+@media (min-width: 180px){
+    .col-xs-6{
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}

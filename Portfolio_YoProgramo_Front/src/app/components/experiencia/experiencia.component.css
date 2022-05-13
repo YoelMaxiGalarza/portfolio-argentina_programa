@@ -1,7 +1,9 @@
 .experiencia_encabezado {
     text-align: center;
 }
-
+.row{
+    --bs-gutter-x: 0;
+}
 .trabajo {
     padding: 0 3rem;
 }

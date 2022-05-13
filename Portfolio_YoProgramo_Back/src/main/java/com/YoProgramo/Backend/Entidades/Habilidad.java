@@ -1,16 +1,12 @@
 package com.YoProgramo.Backend.Entidades;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
-import org.hibernate.annotations.GenericGenerator;
-
-public class Skill {
+@Entity
+public class Habilidad {
+    
     @Id
-    @GeneratedValue(generator = "uuid")
-	@GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
+    private Integer id;
     
     private Integer percent;
     private String image;
@@ -19,10 +15,10 @@ public class Skill {
     private Persona persona;
 
 
-    public Skill() {
+    public Habilidad() {
     }
 
-    public Skill(Integer percent, String image) {
+    public Habilidad(Integer percent, String image) {
         this.percent = percent;
         this.image = image;
     }
@@ -43,13 +39,10 @@ public class Skill {
         this.image = image;
     }
 
-    public String getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public Persona getPersona() {
         return this.persona;

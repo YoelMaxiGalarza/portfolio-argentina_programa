@@ -1,22 +1,19 @@
 package com.YoProgramo.Backend.Entidades;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Usuario {
 	
 	@Id
-	@GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	private String id;
+	private Integer id;
 
 	private String nombreDeUsuario;
 	private String clave;
+	private String mail;
 
 	@OneToOne
 	private Persona persona;
@@ -25,7 +22,7 @@ public class Usuario {
 	
 	}
 
-	public Usuario(String id, String nombreDeUsuario, String clave){
+	public Usuario(Integer id, String nombreDeUsuario, String clave){
 		this.id = id;
 		this.nombreDeUsuario = nombreDeUsuario;
 		this.clave = clave;
@@ -38,11 +35,11 @@ public class Usuario {
 
 
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -62,6 +59,8 @@ public class Usuario {
 		this.clave = clave;
 	}
 
+	
+
 	@Override
 	public String toString() {
 		return "{" +
@@ -71,4 +70,33 @@ public class Usuario {
 			"}";
 	}
 	
+
+    /**
+     * @return String return the mail
+     */
+    public String getMail() {
+        return mail;
+    }
+
+    /**
+     * @param mail the mail to set
+     */
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    /**
+     * @return Persona return the persona
+     */
+    public Persona getPersona() {
+        return persona;
+    }
+
+    /**
+     * @param persona the persona to set
+     */
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
 }

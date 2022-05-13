@@ -2,18 +2,16 @@ package com.YoProgramo.Backend.Entidades;
 
 import java.util.List;
 
-import javax.persistence.GeneratedValue;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.hibernate.annotations.GenericGenerator;
-
-public class Persona {
+@Entity
+public class Persona{
+    
     @Id
-    @GeneratedValue(generator = "uuid")
-	@GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
+    private Integer id;
 
     private String nombre;
     private String cargo;
@@ -31,7 +29,7 @@ public class Persona {
     private List<Experiencia> experienciaLaboral;
     
     @OneToMany
-    private List<Skill> habilidades; 
+    private List<Habilidad> habilidades; 
     
     @OneToMany
     private List<Proyecto> proyectos; 
@@ -39,33 +37,20 @@ public class Persona {
 
     public Persona() {
     }
-    
 
-    public Persona(String id, String nombre, String cargo, String descripcion, String foto, List<Estudio> estudios, List<Experiencia> experienciaLaboral, List<Skill> habilidades,List<Proyecto> proyectos) {
-        this.id = id;
+    public Persona(String nombre, String cargo, String descripcion, String foto, List<Estudio> estudios, List<Experiencia> experienciaLaboral,List<Habilidad> habilidades, List<Proyecto> proyectos) {
         this.nombre = nombre;
         this.cargo = cargo;
         this.descripcion = descripcion;
         this.foto = foto;
         this.estudios = estudios;
         this.experienciaLaboral = experienciaLaboral;
-        this.habilidades = habilidades;
-        this.proyectos = proyectos;
-    }
-
-    
-    public Persona(String nombre, String cargo, String descripcion, String foto, List<Estudio> estudios, List<Experiencia> experienciaLaboral,List<Proyecto> proyectos) {
-        this.nombre = nombre;
-        this.cargo = cargo;
-        this.descripcion = descripcion;
-        this.foto = foto;
-        this.estudios = estudios;
-        this.experienciaLaboral = experienciaLaboral;
+        this.habilidades= habilidades;
         this.proyectos = proyectos;
     }
 
 
-    public String getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -125,11 +110,11 @@ public class Persona {
         this.experienciaLaboral = experienciaLaboral;
     }
 
-    public List<Skill> getHabilidades() {
+    public List<Habilidad> getHabilidades() {
         return this.habilidades;
     }
 
-    public void setHabilidades(List<Skill> habilidades) {
+    public void setHabilidades(List<Habilidad> habilidades) {
         this.habilidades = habilidades;
     }
 

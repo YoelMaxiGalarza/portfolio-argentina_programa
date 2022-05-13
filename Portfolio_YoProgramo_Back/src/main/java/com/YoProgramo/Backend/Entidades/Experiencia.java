@@ -1,16 +1,14 @@
 package com.YoProgramo.Backend.Entidades;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
-import org.hibernate.annotations.GenericGenerator;
 
+@Entity
 public class Experiencia {
+    
     @Id
-	@GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	private String id;
+	private Integer id;
+    
     private String title;
     private String description;
     private String foto;
@@ -28,6 +26,7 @@ public class Experiencia {
         this.foto = foto;
     }
 
+    
 
     /**
      * @return String return the title
@@ -75,7 +74,7 @@ public class Experiencia {
     /**
      * @return String return the id
      */
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -1,6 +1,9 @@
 .educacion_encabezado{
     text-align: center;
 }
+.row{
+    --bs-gutter-x: 0;
+}
 .estudio{
     padding: 0 3rem;
 }

@@ -1,11 +1,13 @@
 package com.YoProgramo.Backend.Entidades;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
+@Entity
 public class Estudio {
     @Id
 	@GeneratedValue(generator = "uuid")

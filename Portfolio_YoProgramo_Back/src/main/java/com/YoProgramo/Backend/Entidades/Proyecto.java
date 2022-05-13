@@ -1,11 +1,10 @@
 package com.YoProgramo.Backend.Entidades;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import org.hibernate.annotations.GenericGenerator;
 
+@Entity
 public class Proyecto {
     @Id
     @GeneratedValue(generator = "uuid")
