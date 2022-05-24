@@ -16,6 +16,7 @@ import { HardSoftSkillsComponent } from './components/hard-soft-skills/hard-soft
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { LoginComponent } from './components/login/login.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoginComponent } from './components/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
