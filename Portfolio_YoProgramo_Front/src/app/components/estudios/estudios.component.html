@@ -1,0 +1,24 @@
+<div class="contenedor-estudio bg-dark text-white">
+    <div class="row estudio_encabezado">
+        <h2>ESTUDIOS</h2>
+    </div>
+    <div class="row estudio">
+        <div *ngFor="let estudio of estudios" class="card mb-3 bg-secondary text-white">
+            <div class="row g-0">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <img src={{estudio.logo}} class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                    <div class="card-body">
+                        <h3 class="card-title">{{estudio.titulo}}</h3>
+                        <h4>{{estudio.institucion}}</h4>
+                        <h5>{{estudio.fechaInicio}}</h5>
+                        <h5>{{estudio.fechaFin}}</h5>
+                        <p class="card-text">{{estudio.descripcion}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -3,14 +3,11 @@
         <img id="fotoperfil" src="../../../assets/fotoPerfil.png" alt="Foto de perfil" class="img-fluid">
     </div>
     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 contenedor-nombre">
-        <p id="nombre" class="mt-5">{{persona.nombre}}</p>
-        <p id="cargo">
-            Full Stack Developer
-        </p>
+        <p id="nombre" class="mt-5">{{persona.nombre}} {{persona.apellido}}</p>
+        <p id="cargo">{{persona.puesto}}</p>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 contenedor-descripcion">
         <h1>Acerca de mi</h1>
-        <p class="descripcion"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, adipisci. Rem rerum officiis eos impedit unde dolorem est nam laudantium beatae, omnis eius nemo adipisci aliquam cumque magnam eligendi atque?
-        </p>
+        <p class="descripcion">{{persona.descripcion}}</p>
     </div>
 </div>

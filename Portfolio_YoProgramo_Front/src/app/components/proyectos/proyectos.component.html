@@ -1,4 +1,15 @@
 <div class="container-proyectos mt-5 bg-dark">
     <h2 class="text-white border-light">MIS PROYECTOS</h2>
-    <app-proyecto></app-proyecto>
+    <div class="container-proyecto mt-5 row">
+        <div *ngFor="let proyecto of proyectos" class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card mb-3 border-light bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">{{proyecto.titulo}}</h5>
+                    <p class="card-text">{{proyecto.descripcion}}</p>
+                    <a href="{{proyecto.url}}" class="btn btn-primary">Visitar</a>
+                    <!-- TODO: add img -->
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

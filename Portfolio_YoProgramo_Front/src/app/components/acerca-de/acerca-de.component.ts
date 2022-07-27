@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonaService } from 'src/app/service/persona.service';
-import { persona } from './../../model/persona.module';
+import { PersonaService } from 'src/app/services/persona.service';
+import { Persona } from '../../models/persona';
 
 @Component({
   selector: 'app-acerca-de',
@@ -8,11 +8,22 @@ import { persona } from './../../model/persona.module';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  persona: persona = new persona("","","");
+
+  // TODO: remove hardcoded values and call API when component loads (ngOnInit)
+  persona: Persona = {
+    id: 1,
+    nombre: "Yoel",
+    apellido: "Galarza",
+    puesto: "Full Stack Developer",
+    foto: "../../../assets/fotoPerfil.png",
+    descripcion: "La descripción va aqui ..."
+  }
+
   constructor(public personaService: PersonaService) { }
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => {this.persona = data})
+    // TODO: do something about this
+    // this.personaService.obtenerPersona().subscribe(data => {this.persona = data});
   }
 
 }
