@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "yoelmaxi-argentinaprograma": {
+      "hosting": {
+        "Portfolio_YoProgramo": [
+          "yoelmaxi-argentinaprograma"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "yoelmaxi-argentinaprograma"
+  }
+}

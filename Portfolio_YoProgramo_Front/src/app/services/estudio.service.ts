@@ -7,7 +7,7 @@ import { Estudio } from '../models/estudio';
   providedIn: 'root'
 })
 export class EstudioService {
-  URL = 'http://localhost:8080/estudio'; // TODO: fix URL
+  URL = 'https://yoelgalarza-argentinaprograma.herokuapp.com/estudio'; // TODO: fix URL
 
   constructor(private http: HttpClient) { }
 

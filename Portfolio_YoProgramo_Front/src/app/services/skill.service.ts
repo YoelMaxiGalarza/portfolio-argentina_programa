@@ -7,7 +7,7 @@ import { Skill } from '../models/skill';
 	providedIn: 'root'
 })
 export class SkillService {
-	URL = 'http://localhost:8080/skill'; // TODO: fix URL
+	URL = 'https://yoelgalarza-argentinaprograma.herokuapp.com/skill'; // TODO: fix URL
 
 	constructor(private http: HttpClient) { }
 

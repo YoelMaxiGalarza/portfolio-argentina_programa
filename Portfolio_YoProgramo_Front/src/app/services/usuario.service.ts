@@ -13,7 +13,7 @@ interface LoginResult {
   providedIn: 'root',
 })
 export class UsuarioService {
-  private URL = 'http://localhost:8080/login'; // TODO: fix URL
+  private URL = 'https://yoelgalarza-argentinaprograma.herokuapp.com/login'; // TODO: fix URL
 
   constructor(private http: HttpClient) {}
 

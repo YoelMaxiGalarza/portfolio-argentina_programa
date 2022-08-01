@@ -7,7 +7,7 @@ import { Persona } from '../models/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  URL = 'http://localhost:8080/persona'; // TODO: fix URL
+  URL = 'https://yoelgalarza-argentinaprograma.herokuapp.com/persona'; // TODO: fix URL
 
   constructor(private http:HttpClient) { }
 

@@ -7,7 +7,7 @@ import { Experiencia } from '../models/experiencia';
 	providedIn: 'root'
 })
 export class ExperienciaService {
-	URL = 'http://localhost:8080/experiencias'; // TODO: fix URL
+	URL = 'https://yoelgalarza-argentinaprograma.herokuapp.com/experiencias'; // TODO: fix URL
 
 	constructor(private http: HttpClient) { }
 

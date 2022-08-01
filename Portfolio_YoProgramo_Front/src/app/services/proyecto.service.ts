@@ -7,7 +7,7 @@ import { Proyecto } from '../models/proyecto';
   providedIn: 'root',
 })
 export class ProyectoService {
-  URL = 'http://localhost:8080/proyecto'; // TODO: fix URL
+  URL = 'https://yoelgalarza-argentinaprograma.herokuapp.com/proyecto'; // TODO: fix URL
 
   constructor(private http: HttpClient) {}
 
