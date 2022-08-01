@@ -7,11 +7,25 @@ import { Estudio } from '../models/estudio';
   providedIn: 'root'
 })
 export class EstudioService {
-  URL = 'http://localhost:8080/personas/'; // TODO: fix URL
+  URL = 'http://localhost:8080/estudio'; // TODO: fix URL
 
   constructor(private http: HttpClient) { }
 
   public obtenerEstudios() : Observable<Estudio[]> {
-    return this.http.get<Estudio[]>(this.URL + 'traer/perfil'); // TODO: fix URL
+    return this.http.get<Estudio[]>(this.URL + '/lista'); // TODO: fix URL
   }
+
+  public crearEstudio(estudio: Estudio) : Observable<Estudio> {
+		console.log(this.URL);
+		return this.http.post<Estudio>(this.URL + '/crear', estudio);
+	}
+
+	public editarEstudio(estudio: Estudio) : Observable<Estudio> {
+		console.log(this.URL);
+		return this.http.put<Estudio>(this.URL + '/update', estudio);
+	}
+
+  public eliminarEstudio(estudioId: number): Observable<any> {
+		return this.http.delete<any>(this.URL + '/delete/' + estudioId);
+	  }
 }

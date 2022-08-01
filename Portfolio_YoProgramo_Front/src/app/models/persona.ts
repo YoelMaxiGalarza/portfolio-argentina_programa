@@ -3,6 +3,6 @@ export interface Persona {
 	nombre: string;
 	apellido: string;
 	puesto: string;
-	foto: string;
+	imagen: string;
 	descripcion: string;
 }

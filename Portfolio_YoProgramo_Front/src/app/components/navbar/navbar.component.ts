@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(private usuarioService: UsuarioService) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  onLogout() {
+    this.usuarioService.logout();
+    window.location.reload(); // TODO: user router
   }
 
+  isLoggedIn() : Boolean {
+    return this.usuarioService.isLoggedIn();
+  }
 }

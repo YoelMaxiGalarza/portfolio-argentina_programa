@@ -1,13 +1,91 @@
 <div class="row contenedor-acerca">
+    
     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 contendor-fotoPerfil">
         <img id="fotoperfil" src="../../../assets/fotoPerfil.png" alt="Foto de perfil" class="img-fluid">
     </div>
     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 contenedor-nombre">
-        <p id="nombre" class="mt-5">{{persona.nombre}} {{persona.apellido}}</p>
+        <p id="pnombre" class="mt-5">{{persona.nombre}} {{persona.apellido}}</p>
         <p id="cargo">{{persona.puesto}}</p>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 contenedor-descripcion">
+    
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 contenedor-descripcion">
         <h1>Acerca de mi</h1>
         <p class="descripcion">{{persona.descripcion}}</p>
     </div>
-</div>
+    <div class="col">
+            <button class="btn btn-primary" (click)="onEditarAcercaDeModal()" *ngIf="isLoggedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z">
+                    </path>
+                </svg>
+                Editar
+            </button>
+    </div>
+
+    <div class="modal" tabindex="-1" id="editarAcercaDeModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Proyecto:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <form [formGroup]="editarAcercaDeForm">
+                                <div class="col">
+                                    <div class="form-floating mb-3">
+                                        <input hidden type="text" class="form-control" id="idEditar"
+                                            formControlName="id">
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="nombreEditar"
+                                            formControlName="nombre" placeholder="Nombre">
+                                        <label for="nombreEditar">Nombre:</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="apellidoEditar" formControlName="apellido"
+                                            placeholder="Apellido">
+                                        <label for="apellidoEditar">Apellido:</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="puestoEditar" formControlName="puesto"
+                                            placeholder="Puesto">
+                                        <label for="puestoEditar">Puesto:</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="imagenEditar"
+                                            formControlName="imagen" placeholder="URL:">
+                                        <label for="imagenEditar">URL de Imagen:</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" placeholder="Describete brevemente"
+                                            id="descripcionEditar" formControlName="descripcion"></textarea>
+                                        <label for="descripcionEditar">Descripcion:</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" (click)="onEditarAcercaDe()">Editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>

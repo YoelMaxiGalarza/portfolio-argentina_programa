@@ -7,11 +7,24 @@ import { Skill } from '../models/skill';
 	providedIn: 'root'
 })
 export class SkillService {
-	URL = 'http://localhost:8080/personas/'; // TODO: fix URL
+	URL = 'http://localhost:8080/skill'; // TODO: fix URL
 
 	constructor(private http: HttpClient) { }
 
+	// TODO: complete
 	public obtenerSkills(): Observable<Skill[]> {
-		return this.http.get<Skill[]>(this.URL + 'traer/perfil');
+		return this.http.get<Skill[]>(this.URL + '/lista'); // TODO: fix URL
 	}
+
+	public crearSkill(skill: Skill) : Observable<Skill> {
+		return this.http.post<Skill>(this.URL + '/crear', skill);
+	}
+
+	public editarSkill(skill: Skill) : Observable<Skill> {
+		console.log(this.URL);
+		return this.http.put<Skill>(this.URL + '/update', skill);
+	}
+	public eliminarSkill(skillId: number): Observable<any> {
+		return this.http.delete<any>(this.URL + '/delete/' + skillId);
+	  }
 }

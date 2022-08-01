@@ -3,7 +3,7 @@ export interface Experiencia {
     nombre: string;
     puesto: string;
     descripcion: string;
-    logo: string;
-    fechaInicio: string;
-    fechaFin: string;
+    imagen: string;
+    fechaInicio: Date | null;
+    fechaFin: Date | null;
 }

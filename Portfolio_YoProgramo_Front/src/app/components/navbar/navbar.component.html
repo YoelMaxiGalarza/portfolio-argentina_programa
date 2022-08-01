@@ -8,7 +8,8 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
            <app-redes></app-redes>
-           <a class="btn btn-outline-success" routerLink="/login">LOGIN</a>
+           <a class="btn btn-outline-success" routerLink="/login" *ngIf="!isLoggedIn">Login</a>
+           <a class="btn btn-outline-success" (click)="onLogout()" *ngIf="isLoggedIn">Logout</a>
         </div>
     </div>
 </nav>
