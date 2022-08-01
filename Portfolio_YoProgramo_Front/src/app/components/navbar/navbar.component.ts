@@ -7,16 +7,17 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  isLoggedIn: Boolean = false;
+
   constructor(private usuarioService: UsuarioService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoggedIn = this.usuarioService.isLoggedIn();
+    console.log(this.isLoggedIn);
+  }
 
   onLogout() {
     this.usuarioService.logout();
     window.location.reload(); // TODO: user router
-  }
-
-  isLoggedIn() : Boolean {
-    return this.usuarioService.isLoggedIn();
   }
 }

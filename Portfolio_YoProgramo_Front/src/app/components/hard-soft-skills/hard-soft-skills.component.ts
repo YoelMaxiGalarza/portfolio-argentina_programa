@@ -42,7 +42,6 @@ export class HardSoftSkillsComponent implements OnInit {
       this.skills = data;
     });
     this.isLoggedIn = this.usuarioService.isLoggedIn();
-	console.log(this.isLoggedIn);
   }
 
   onCrearSkillModal() {
